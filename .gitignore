@@ -1,0 +1,15 @@
+# Go
+bin/
+dist/
+coverage.out
+*.test
+
+# Env
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
