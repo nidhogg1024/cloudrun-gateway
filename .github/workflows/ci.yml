@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+
+      - name: Validate repository scaffold
+        run: |
+          test -f README.md
+          test -f ROADMAP.md
+          test -f LICENSE
+          test -f docs/INITIAL_PLAN.md
+
+      - name: Run Go checks when module exists
+        shell: bash
+        run: |
+          if [[ -f go.mod ]]; then
+            go mod tidy
+            git diff --exit-code
+            go test ./...
+          else
+            echo "go.mod not found; skipping Go checks for now."
+          fi

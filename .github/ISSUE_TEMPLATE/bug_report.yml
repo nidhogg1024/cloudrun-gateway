@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a defect or unexpected behavior
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Share the smallest set of steps to reproduce the issue.
+      placeholder: |
+        1. Configure a route
+        2. Send a request
+        3. Observe the response
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Runtime, Cloud Run details, Go version, database, etc.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste errors, stack traces, or screenshots if available.
+    validations:
+      required: false

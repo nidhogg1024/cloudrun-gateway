@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Project roadmap
+    url: https://github.com/nidhogg1024/cloudrun-gateway/blob/main/ROADMAP.md
+    about: Check the planned milestones before opening a new request.
